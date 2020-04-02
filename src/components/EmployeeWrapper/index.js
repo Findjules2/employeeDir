@@ -2,8 +2,6 @@ import React from "react";
 import Employee from "../Employee";
 
 function EmployeeWrapper(props) {
-  console.log(props.employees[0]);
-
   // compare(a, b) {
   //     // Use toUpperCase() to ignore character casing
   //     // console.log(a);

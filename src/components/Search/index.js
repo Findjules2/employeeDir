@@ -4,7 +4,10 @@ import React from "react";
 // import EmployeeWrapper from "./components/EmployeeWrapper";
 // import Navbar from "./components/Navbar";
 
-function Search() {
+function Search(props) {
+  const inputHandler = event => {
+    props.search(event.target.value);
+  };
   return (
     <div className="navbar navbar-light bg-light">
       <form className="form-inline">
@@ -13,6 +16,8 @@ function Search() {
           type="search"
           placeholder="Search"
           aria-label="Search"
+          value={props.theTerm}
+          onChange={inputHandler}
         />
         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
           Search

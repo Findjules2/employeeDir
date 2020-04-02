@@ -7,7 +7,8 @@ import Search from "./components/Search";
 
 class App extends React.Component {
   state = {
-    employees: []
+    employees: [],
+    searchName: ""
   };
 
   componentDidMount() {
@@ -16,12 +17,21 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
 
+  searchTerm = terms => {
+    this.setState({ searchName: terms });
+  };
+
   render() {
+    const activeList = this.state.employees.filter(employee => {
+      return employee.name.first
+        .toLowerCase()
+        .includes(this.state.searchName.toLowerCase());
+    });
     return (
       <div className="App">
         <Navbar />
-        <Search />
-        <EmployeeWrapper employees={this.state.employees} />
+        <Search search={this.searchTerm} theTerm={this.state.searchName} />
+        <EmployeeWrapper employees={activeList} />
       </div>
     );
   }
