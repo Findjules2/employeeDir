@@ -10,4 +10,4 @@
 * The URL of the GitHub repository
   https://github.com/Findjules2/employeeDirectory
 
-![Screenshot of employeeDirectory](./employee-directory/public/assets/images/employeeDirectory.png)
+![Screenshot of employeeDirectory](./public/assets/images/employeeDirectory.png)
